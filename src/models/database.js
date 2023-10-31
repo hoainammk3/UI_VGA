@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 //Lets connect to our database using the DB server URL.
  function connect() {
     // Kết nối đến cơ sở dữ liệu MongoDB
-    mongoose.connect('mongodb://127.0.0.1:27017/user_account', { 
+    mongoose.connect('mongodb://127.0.0.1:27017/vca', { 
         useNewUrlParser: true, 
         useUnifiedTopology: true });
     const db = mongoose.connection;

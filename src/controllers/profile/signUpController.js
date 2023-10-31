@@ -1,14 +1,14 @@
 const bcrypt = require('bcryptjs');
-const User = require('../models/User')
+const User = require('../../models/profile/User')
 // const jwt = require('jsonwebtoken');
 
 const signUpController = async (req, res) => {
-    const { username, password } = req.body;
+  const { username, email, password } = req.body;
 
   // Mã hóa mật khẩu trước khi lưu vào cơ sở dữ liệu
   const hashedPassword = await bcrypt.hash(password, 10);
 
-  const newUser = new User({ username, password: hashedPassword });
+  const newUser = new User({ username, email, password: hashedPassword });
 
   newUser.save()
     .then(() => {

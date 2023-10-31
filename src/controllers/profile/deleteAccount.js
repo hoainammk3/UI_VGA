@@ -1,4 +1,4 @@
-const User = require('../models/User')
+const User = require('../../models/profile/User')
 
 const deleteAccount = async (req, res) => {
     const {username} = req.body;
